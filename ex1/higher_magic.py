@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-from typing import Callable, Any
+from collections.abc import Callable
+from typing import Any
 
 
 def spell_combiner(spell1: Callable, spell2: Callable) -> Callable:
-    def combined(target: str, power: int) -> tuple[Callable, Callable]:
+    def combined(target: str, power: int) -> tuple[str, str]:
         return (
             spell1(target, power),
             spell2(target, power)
@@ -29,10 +30,10 @@ def conditional_caster(condition: Callable, spell: Callable) -> Callable:
 
 def spell_sequence(spells: list[Callable]) -> Callable:
     def sequence(target: str, power: int) -> list[str]:
-        all: list[str] = []
+        results: list[str] = []
         for spell in spells:
-            all.append(spell(target, power))
-        return all
+            results.append(spell(target, power))
+        return results
     return sequence
 
 

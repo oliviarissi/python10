@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from typing import Callable, Any
+from collections.abc import Callable
+from typing import Any
 import functools as ft
 import time
 
@@ -83,11 +84,11 @@ def main() -> None:
 
     @spell_timer
     def printing() -> str:
-        return "Random print"
+        return "Here is your casted spell"
 
     print(printing())
 
-    print("\nTesting retrying spell...")
+    print("\n---Testing retrying spell...")
 
     counter = {"attempts": 0}
 
@@ -101,7 +102,7 @@ def main() -> None:
     result = unstable_spell()
     print(result)
 
-    print("\nTesting MageGuild...")
+    print("\n---Testing MageGuild...")
 
     mage = MageGuild()
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from typing import Callable, Any
+from collections.abc import Callable
+from typing import Any
 import functools as ft
 import operator
 
@@ -53,7 +54,7 @@ def spell_dispatcher() -> Callable[[Any], str]:
 
     @spell.register
     def _(x: int) -> str:
-        return f"Damager spell: {x} damage"
+        return f"Damage spell: {x} damage"
 
     @spell.register
     def _(x: str) -> str:
@@ -81,10 +82,10 @@ def main() -> None:
         print(f"{operation} = {spell_reducer(spell_powers, operation)}")
 
     print("\n---Partial Enchanter---")
-    enchaters = partial_enchanter(enchantment)
-    print(enchaters["water"](target="Eudald"))
-    print(enchaters["fire"](target="Brian"))
-    print(enchaters["ice"](target="Beny"))
+    enchanters = partial_enchanter(enchantment)
+    print(enchanters["water"](target="Eudald"))
+    print(enchanters["fire"](target="Brian"))
+    print(enchanters["ice"](target="Beny"))
 
     print("\n---Fibonacci---")
     for nb in fibonacci_tests:
@@ -93,10 +94,10 @@ def main() -> None:
 
     print("\n---Dispatcher---")
     dispatcher = spell_dispatcher()
-    print(f"{dispatcher(10)}")
-    print(f"{dispatcher("fireball")}")
-    print(f"{dispatcher(operations)}")
-    print(f"{dispatcher({"hello": 45})}")
+    print(dispatcher(10))
+    print(dispatcher("fireball"))
+    print(dispatcher(operations))
+    print(dispatcher({"hello": 45}))
 
 
 if __name__ == "__main__":

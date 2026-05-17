@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import Callable
+from collections.abc import Callable
 
 
 def mage_counter() -> Callable:
@@ -72,22 +72,22 @@ def main() -> None:
     print("\n---Testing Enchantements---\n")
     print("Levitating Factory")
     enchantment1 = enchantment_factory("Levitating")
-    print(f"    Sword = {enchantment1("Sword")}")
-    print(f"    PC = {enchantment1("PC")}")
-    print(f"    Student = {enchantment1("Student")}")
+    print(f"    Sword = {enchantment1('Sword')}")
+    print(f"    PC = {enchantment1('PC')}")
+    print(f"    Student = {enchantment1('Student')}")
 
     print("\nFrozen Factory")
     enchantment2 = enchantment_factory("Frozen")
-    print(f"    Sword = {enchantment2("Sword")}")
-    print(f"    PC = {enchantment2("PC")}")
-    print(f"    Student = {enchantment2("Student")}")
+    print(f"    Sword = {enchantment2('Sword')}")
+    print(f"    PC = {enchantment2('PC')}")
+    print(f"    Student = {enchantment2('Student')}")
 
     print("\n---Testing Vault---\n")
     vault = memory_vault()
     print("Storing 5 swords")
     vault["store"]("sword", 5)
-    print(f"Storage sword count: {vault["recall"]("sword")}")
-    print(f"Storage helmet count: {vault["recall"]("helmet")}")
+    print(f"Storage sword count: {vault['recall']('sword')}")
+    print(f"Storage helmet count: {vault['recall']('helmet')}")
 
 
 if __name__ == "__main__":
