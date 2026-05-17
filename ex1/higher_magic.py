@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import Callable
+from typing import Callable, Any
 
 
 def spell_combiner(spell1: Callable, spell2: Callable) -> Callable:
@@ -13,13 +13,13 @@ def spell_combiner(spell1: Callable, spell2: Callable) -> Callable:
 
 
 def power_amplifier(base_spell: Callable, multiplier: int) -> Callable:
-    def amplified(target: str, power: int) -> Callable:
+    def amplified(target: str, power: int) -> Any:
         return (base_spell(target, power * multiplier))
     return amplified
 
 
 def conditional_caster(condition: Callable, spell: Callable) -> Callable:
-    def conditioned(target: str, power: int) -> str:
+    def conditioned(target: str, power: int) -> Any:
         if condition(target, power):
             return spell(target, power)
         return "Spell fizzled"
