@@ -61,7 +61,7 @@ def spell_dispatcher() -> Callable[[Any], str]:
         return f"Enchantment: {x}"
 
     @spell.register
-    def _(x: list[Any]) -> str:
+    def _(x: list) -> str:
         return f"Multi-cast: {len(x)} spells"
 
     return spell

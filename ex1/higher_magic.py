@@ -62,19 +62,21 @@ def main() -> None:
     target: str = "Dragon"
     power: int = 5
 
-    print("Testing spell combiner...")
+    print("---Testing spell combiner---")
     combined: Callable = spell_combiner(fireball, heal)
     print(combined(target, power))
 
-    print("\nTesting power amplifier...")
+    print("\n---Testing power amplifier---")
+    print(f"Original: {fireball(target, power)}")
     amplified: Callable = power_amplifier(fireball, 5)
-    print(amplified(target, power))
+    print(f"Ampified: {amplified(target, power)}")
 
-    print("\nTesting conditional caster...")
+    print("\n---Testing conditional caster---")
     conditioned: Callable = conditional_caster(strong_enough, heal)
-    print(conditioned(target, power))
+    print(f"Low power: {conditioned(target, power)}")
+    print(f"High power: {conditioned(target, 25)}")
 
-    print("\nTesting spell sequence...")
+    print("\n---Testing spell sequence---")
     spells: list[Callable] = [fireball, lightning, freeze]
     sequenced: Callable = spell_sequence(spells)
     print(sequenced(target, power))

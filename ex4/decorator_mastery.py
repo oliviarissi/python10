@@ -106,8 +106,8 @@ def main() -> None:
 
     mage = MageGuild()
 
-    print(MageGuild.validate_mage_name("Gandalf"))
-    print(MageGuild.validate_mage_name("Al"))
+    print(f"Validate Gandalf: {MageGuild.validate_mage_name('Gandalf')}")
+    print(f"Validate Al: {MageGuild.validate_mage_name('Al')}")
 
     print(mage.cast_spell("Lightning", 15))
     print(mage.cast_spell("Spark", 5))

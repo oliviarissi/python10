@@ -65,9 +65,10 @@ def main() -> None:
 
     print("\n---Testing Accumulator---\n")
     accumulator = spell_accumulator(5)
-    print(f"Run 1 = {accumulator(1)}")
-    print(f"Run 2 = {accumulator(2)}")
-    print(f"Run 3 = {accumulator(3)}")
+    print("Starting value = 5")
+    print(f"Run 1 (add 1) = {accumulator(1)}")
+    print(f"Run 2 (add 2) = {accumulator(2)}")
+    print(f"Run 3 (add 4) = {accumulator(4)}")
 
     print("\n---Testing Enchantements---\n")
     print("Levitating Factory")

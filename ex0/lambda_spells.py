@@ -56,18 +56,18 @@ def main() -> None:
         {"name": "D", "power": 1, "type": "dd"},
     ]
 
-    print("SORTED")
+    print("---SORTED---")
     print(artifact_sorter(artifacts))
 
-    print("\nFILTERED")
+    print("\n---FILTERED---")
     print(power_filter(artifacts, 3))
 
     spells: list[str] = ["water", "gold", "alohomora"]
 
-    print("\nTRANSFORMED")
+    print("\n---TRANSFORMED---")
     print(spell_transformer(spells))
 
-    print("\nSTATS")
+    print("\n---STATS---")
     print(mage_stats(artifacts))
 
 
